@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$primaryColor: #000;
+$secondaryColor: #fff;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+  .glitch {
+    position: relative;
+    margin: 0 auto;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 0.01em;
+    transform: scale3d(1, 1, 1);
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      // background: attr(data-bg-color);
+      // color: attr(data-color);
+      clip: rect(0, 900px, 0, 0);
+      // @apply bg-white dark:bg-black text-black dark:text-white;
+    }
+
+    &::before {
+      left: 7px;
+      text-shadow: 1px 0 green;
+      animation: glitch-effect 3s infinite linear alternate-reverse;
+    }
+
+    &::after {
+      left: 3px;
+      text-shadow: -1px 0 red;
+      animation: glitch-effect 2s infinite linear alternate-reverse;
+    }
+  }
+}
+
+@keyframes glitch-effect {
+  @for $i from 0 through 20 {
+    #{percentage($i*(1/20))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
+}
+
+.text-link {
+  @apply text-black dark:text-white decoration-1 decoration-black dark:decoration-white underline;
+}
