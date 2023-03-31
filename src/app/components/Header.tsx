@@ -91,7 +91,7 @@ const Header = () => {
 
         {/* mobile navigation */}
         <nav
-          className={`absolute top-0 left-0 w-screen h-screen bg-gray-100 dark:bg-black transition-opacity duration-500 ${
+          className={`absolute top-0 left-0 w-full h-screen bg-gray-100 dark:bg-black transition-opacity duration-500 ${
             open
               ? "opacity-100 pointer-events-auto z-40"
               : "opacity-0 pointer-events-none -z-40"
