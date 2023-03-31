@@ -22,27 +22,19 @@ const Header = () => {
   return (
     <header className={"px-5 py-7"}>
       <div className="flex items-center justify-between">
-        <div id="logo" className="w-32">
+        <Link href="/" id="logo" className="w-32">
           <Image
             src={`/assets/logo-${theme}.png`}
             alt="logo"
             width={200}
             height={200}
           />
-        </div>
+        </Link>
 
         <div className="flex space-x-4 items-center">
           {/* desktop navigation */}
           <nav className="hidden lg:block">
             <ul className="flex space-x-4 items-center justify-center flex-1 ">
-              <li className={`${activePathName(pathname, "")} py-3`}>
-                <Link
-                  className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
-                  href="/"
-                >
-                  Home
-                </Link>
-              </li>
               <li className={`${activePathName(pathname, "about")} py-3`}>
                 <Link
                   className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
@@ -110,6 +102,7 @@ const Header = () => {
               <ul className="flex flex-col items-center justify-center flex-1 text-xl">
                 <li className={`${activePathName(pathname, "")} py-3`}>
                   <Link
+                    onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/"
                   >
@@ -118,6 +111,7 @@ const Header = () => {
                 </li>
                 <li className={`${activePathName(pathname, "about")} py-3`}>
                   <Link
+                    onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/about"
                   >
@@ -126,6 +120,7 @@ const Header = () => {
                 </li>
                 <li className={`${activePathName(pathname, "projects")} py-3`}>
                   <Link
+                    onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/projects"
                   >
@@ -134,6 +129,7 @@ const Header = () => {
                 </li>
                 <li className={`${activePathName(pathname, "blog")} py-3`}>
                   <Link
+                    onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/blog"
                   >
@@ -142,6 +138,7 @@ const Header = () => {
                 </li>
                 <li className={`${activePathName(pathname, "contact")} py-3`}>
                   <Link
+                    onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/contact"
                   >
