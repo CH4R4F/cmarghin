@@ -13,7 +13,7 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname() as string;
 
   useEffect(() => setMounted(true), []);
 
