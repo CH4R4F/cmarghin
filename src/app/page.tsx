@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import Footer from "./components/Footer";
 
 const popins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -42,6 +43,8 @@ export default function Home() {
         </Link>{" "}
         me.
       </p>
+
+      <Footer />
     </div>
   );
 }
