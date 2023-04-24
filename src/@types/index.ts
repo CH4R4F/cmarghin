@@ -37,9 +37,7 @@ type Article = {
         };
       }[];
     };
-    cover: {
-      data: Media;
-    };
+    cover: Media;
   };
 };
 
@@ -47,4 +45,20 @@ type fetchAPIProps = {
   path: string;
   urlParams?: Record<any, any>;
   options?: Record<any, any>;
+};
+
+type BlogCardProps = {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  cover: string;
+  tags?: {
+    data: {
+      id: number;
+      attributes: {
+        name: string;
+      };
+    }[];
+  };
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import ThemeButton from "./ThemeButton";
@@ -23,9 +23,9 @@ const Header = () => {
     <header className={"px-5 py-7"}>
       <div className="flex items-center justify-between">
         <Link href="/" id="logo" className="w-32">
-          <Image
-            src={`/assets/logo-${theme}.png`}
-            alt="logo"
+          <CldImage
+            src={`/logo-${theme}.png`}
+            alt="CMarghin logo"
             width={200}
             height={200}
           />
