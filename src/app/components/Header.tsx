@@ -43,14 +43,14 @@ const Header = () => {
                   About
                 </Link>
               </li>
-              <li className={`${activePathName(pathname, "projects")} py-3`}>
+              {/* <li className={`${activePathName(pathname, "projects")} py-3`}>
                 <Link
                   className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                   href="/projects"
                 >
                   Projects
                 </Link>
-              </li>
+              </li> */}
               <li className={`${activePathName(pathname, "blog")} py-3`}>
                 <Link
                   className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
