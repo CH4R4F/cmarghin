@@ -29,7 +29,7 @@ type Article = {
     date: string;
     featured: boolean;
     slug: string;
-    tags?: {
+    tags: {
       data: {
         id: number;
         attributes: {

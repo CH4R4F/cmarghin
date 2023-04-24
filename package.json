@@ -20,14 +20,18 @@
     "next": "13.2.4",
     "next-cloudinary": "^4.4.0",
     "next-themes": "^0.2.1",
+    "prismjs": "^1.29.0",
     "qs": "^6.11.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-markdown": "^8.0.7",
+    "remark-gfm": "^3.0.1",
     "sass": "^1.60.0",
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@types/prismjs": "^1.26.0",
     "@types/qs": "^6.9.7",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",

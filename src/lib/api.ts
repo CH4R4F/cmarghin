@@ -2,9 +2,6 @@ import qs from "qs";
 
 const strapiBase = process.env.STRAPI_BASE_URL || "http://localhost:1337";
 
-console.log("strapiBase", strapiBase);
-
-
 export function getStrapiURL(path: string) {
   return `${strapiBase}${path}`;
 }
