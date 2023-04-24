@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import activePathName from "@/lib/activePathName";
 
 const Header = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname() as string;
@@ -24,7 +24,7 @@ const Header = () => {
       <div className="flex items-center justify-between">
         <Link href="/" id="logo" className="w-32">
           <CldImage
-            src={`/logo-${theme}.png`}
+            src={`/logo-${resolvedTheme}.png`}
             alt="CMarghin logo"
             width={200}
             height={200}
