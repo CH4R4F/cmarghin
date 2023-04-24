@@ -25,7 +25,6 @@ const page = async () => {
 
   try {
     blogs = await fetchAPI(info);
-    // console.log(blogs?.data[0].attributes.cover);
   } catch (error) {
     console.log(error);
   }
@@ -43,19 +42,25 @@ const page = async () => {
       </p>
 
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-        {blogs &&
-          blogs.data.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              title={blog.attributes.title}
-              description={blog.attributes.description}
-              cover={blog.attributes.cover.data.attributes.url}
-              tags={blog.attributes.tags}
-              slug={blog.attributes.slug}
-              date={blog.attributes.date}
-            />
-          ))}
+        {blogs.data.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            title={blog.attributes.title}
+            description={blog.attributes.description}
+            cover={blog.attributes.cover.data.attributes.url}
+            tags={blog.attributes.tags}
+            slug={blog.attributes.slug}
+            date={blog.attributes.date}
+          />
+        ))}
       </div>
+      {!blogs.data.length && (
+        <div className="text-center">
+          <h1 className="text-gray-900 text-center opacity-25 font-extrabold  dark:text-gray-100 leading-tight text-5xl md:text-6xl">
+            No blogs found
+          </h1>
+        </div>
+      )}
     </div>
   );
 };
