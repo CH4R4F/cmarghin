@@ -32,18 +32,23 @@ const Article = ({ content }: { content: string }) => {
       remarkPlugins={[remarkGfm]}
       components={{
         h1: ({ children }) => (
-          <h1 className="text-gray-800 dark:text-white/90">{children}</h1>
+          <h1 className="text-gray-900 dark:text-white">{children}</h1>
         ),
         h2: ({ children }) => (
-          <h2 className="text-gray-800 dark:text-white/90">{children}</h2>
+          <h2 className="text-gray-900 dark:text-white">{children}</h2>
         ),
         h3: ({ children }) => (
-          <h3 className="text-gray-800 dark:text-white/90">{children}</h3>
+          <h3 className="text-gray-900 dark:text-white">{children}</h3>
         ),
         p: ({ children }) => (
-          <p className="text-lg font-medium text-gray-500 dark:text-white/80">
+          <p className="text-xl leading-relaxed font-medium text-gray-500 dark:text-gray-400">
             {children}
           </p>
+        ),
+        strong: ({ children }) => (
+          <strong className="font-bold text-gray-900 dark:text-white">
+            {children}
+          </strong>
         ),
         a: ({ children, href }) => {
           if (href?.startsWith("http")) {

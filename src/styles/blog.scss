@@ -1,4 +1,4 @@
-$text-color: #333;
+$text-color: #222;
 $light-text-color: #998;
 
 .blog {
@@ -10,7 +10,7 @@ $light-text-color: #998;
   .title {
     color: $text-color;
     font-weight: 700;
-    font-size: 4em;
+    font-size: clamp(2em, 5vw, 4.5em);
     line-height: 1.2;
     margin-top: 0.2em;
   }
@@ -31,24 +31,24 @@ $light-text-color: #998;
     margin-top: 3em;
 
     h1 {
-      font-weight: 600;
-      font-size: 3em;
+      font-weight: 700;
+      font-size: clamp(2em, 5vw, 3em);
       line-height: 1.2;
-      margin-bottom: 0.2em;
+      margin-bottom: 1rem;
     }
 
     h2 {
-      font-weight: 600;
-      font-size: 2.5em;
+      font-weight: 700;
+      font-size: clamp(1.7em, 5vw, 2.5em);
       line-height: 1.2;
-      margin-bottom: 0.2em;
+      margin-bottom: 1rem;
     }
 
     h3 {
-      font-weight: 600;
-      font-size: 2em;
+      font-weight: 700;
+      font-size: clamp(1.2em, 5vw, 2em);
       line-height: 1.2;
-      margin-bottom: 0.2em;
+      margin-bottom: 1rem;
     }
 
     img {
@@ -56,5 +56,10 @@ $light-text-color: #998;
       display: block;
       margin: 2em auto;
     }
+  }
+
+  pre[class*="language-"] {
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 }
