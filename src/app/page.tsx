@@ -30,15 +30,21 @@ export default function Home() {
       </p>
       <p className="text-gray-500 dark:text-gray-300 mt-4 text-[16px]">
         You can see my{" "}
-        <Link className="text-link" href="/projects">
+        <a
+          className="text-link"
+          href="https://www.github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="See my projects on github"
+        >
           projects
-        </Link>
+        </a>
         , or read my{" "}
-        <Link className="text-link" href="/blog">
+        <Link aria-label="read my articles" className="text-link" href="/blog">
           articles
         </Link>
         , or{" "}
-        <Link className="text-link" href="/contact">
+        <Link aria-label="contact me" className="text-link" href="/contact">
           contact
         </Link>{" "}
         me.

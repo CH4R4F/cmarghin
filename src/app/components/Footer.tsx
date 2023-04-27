@@ -7,6 +7,7 @@ const Footer = () => {
       <ul className="flex flex-wrap items-center space-x-10">
         <li>
           <a
+            aria-label="Follow me on Github"
             href="https://www.github.com/ch4r4f"
             target="_blank"
             rel="noreferrer noopener"
@@ -16,6 +17,7 @@ const Footer = () => {
         </li>
         <li>
           <a
+            aria-label="Follow me on Twitter"
             href="https://twitter.com/cmarghin"
             target="_blank"
             rel="noreferrer noopener"
@@ -25,6 +27,7 @@ const Footer = () => {
         </li>
         <li>
           <a
+            aria-label="Follow me on LinkedIn"
             href="https://www.linkedin.com/in/charaf-marghin/"
             target="_blank"
             rel="noreferrer noopener"
@@ -34,6 +37,7 @@ const Footer = () => {
         </li>
         <li>
           <a
+            aria-label="Follow me on Behance"
             href="https://www.behance.net/charafmarghin"
             target="_blank"
             rel="noreferrer noopener"

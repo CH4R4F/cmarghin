@@ -27,13 +27,12 @@ const BlogCard = ({
           <div className="flex items-center gap-4">
             {tags &&
               tags.data.map((tag) => (
-                <Link
-                  href={`/blog/tag/${tag.attributes.name}`}
+                <span
                   key={tag.id}
-                  className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400 hover:underline"
+                  className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400 select-none"
                 >
                   {tag.attributes.name}
-                </Link>
+                </span>
               ))}
           </div>
           <Link
@@ -45,7 +44,9 @@ const BlogCard = ({
             {title}
           </Link>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-            {description}
+            {description.length > 150
+              ? description.slice(0, 150) + "..."
+              : description}
           </p>
         </div>
         <div className="mt-4">

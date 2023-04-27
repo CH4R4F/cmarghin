@@ -1,7 +1,6 @@
 import fetchAPI from "@/lib/api";
 import { Poppins, Open_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Article from "@/app/components/Article";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
 
@@ -59,7 +58,7 @@ const Blog = async ({ params }: { params: { blog: string } }) => {
           Posted on {new Date(blog.data[0].attributes.date).toDateString()}
         </span>
         {/* title */}
-        <h1 className={`title dark:text-white`}>
+        <h1 className={`title dark:!text-white`}>
           {blog.data[0].attributes.title}
         </h1>
         {/* tags */}
@@ -78,21 +77,24 @@ const Blog = async ({ params }: { params: { blog: string } }) => {
             };
 
             return (
-              <Link
-                href={`/blog/tag/${tag.attributes.name}`}
+              <span
                 key={tag.id}
                 className={`tag ${
                   openSans.className
-                } px-3 rounded-md hover:underline
+                } px-3 rounded-md select-none
                 ${tagColor[lowerCase] || "bg-gray-400"}
                 `}
               >
                 #{lowerCase}
-              </Link>
+              </span>
             );
           })}
         </div>
-        <Article content={blog.data[0].attributes.content} />
+        <Article
+          alt={blog.data[0].attributes.title}
+          image={blog.data[0].attributes.cover.data.attributes.url}
+          content={blog.data[0].attributes.content}
+        />
       </article>
       <ScrollToTopButton />
     </div>

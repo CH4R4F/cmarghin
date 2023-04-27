@@ -94,6 +94,8 @@ const Header = () => {
 
           {/* mobile burger menu */}
           <button
+            aria-label="Menu toggle"
+            title="Open menu"
             onClick={() => setOpen(!open)}
             className="lg:hidden dark:text-white/70"
           >
@@ -113,6 +115,8 @@ const Header = () => {
             <div className="flex-flex-col">
               <div className="text-right py-7 px-5">
                 <button
+                  aria-label="Menu toggle"
+                  title="Close menu"
                   onClick={() => setOpen(!open)}
                   className="dark:text-white/70"
                 >
@@ -122,6 +126,7 @@ const Header = () => {
               <ul className="flex flex-col items-center justify-center flex-1 text-xl">
                 <li className={`${activePathName(pathname, "")} py-3`}>
                   <Link
+                    aria-label="Home page link"
                     onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/"
@@ -131,6 +136,7 @@ const Header = () => {
                 </li>
                 <li className={`${activePathName(pathname, "about")} py-3`}>
                   <Link
+                    aria-label="About page link"
                     onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/about"
@@ -149,6 +155,7 @@ const Header = () => {
                 </li> */}
                 <li className={`${activePathName(pathname, "blog")} py-3`}>
                   <Link
+                    aria-label="Blog page link"
                     onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/blog"
@@ -158,6 +165,7 @@ const Header = () => {
                 </li>
                 <li className={`${activePathName(pathname, "contact")} py-3`}>
                   <Link
+                    aria-label="Contact page link"
                     onClick={() => setOpen(!open)}
                     className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
                     href="/contact"
