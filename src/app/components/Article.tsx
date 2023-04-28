@@ -15,6 +15,7 @@ import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-css";
 
 import "prismjs/components/prism-jsx";
+import BlogFooter from "./BlogFooter";
 
 const openSans = Open_Sans({
   weight: ["400", "500", "600", "700", "800"],
@@ -26,10 +27,16 @@ const Article = ({
   content,
   image,
   alt,
+  title,
+  slug,
+  description,
 }: {
   content: string;
   image: string;
   alt: string;
+  title: string;
+  slug: string;
+  description: string;
 }) => {
   useEffect(() => {
     Prism.highlightAll();
@@ -51,13 +58,13 @@ const Article = ({
         remarkPlugins={[remarkGfm]}
         components={{
           h1: ({ children }) => (
-            <h1 className="text-gray-900 dark:text-white">{children}</h1>
+            <h1 className="text-gray-900 mt-10 dark:text-white">{children}</h1>
           ),
           h2: ({ children }) => (
-            <h2 className="text-gray-900 dark:text-white">{children}</h2>
+            <h2 className="text-gray-900 mt-10 dark:text-white">{children}</h2>
           ),
           h3: ({ children }) => (
-            <h3 className="text-gray-900 dark:text-white">{children}</h3>
+            <h3 className="text-gray-900 mt-10 dark:text-white">{children}</h3>
           ),
           p: ({ children }) => (
             <p className="text-xl leading-relaxed font-medium text-gray-500 dark:text-gray-400">
@@ -96,6 +103,11 @@ const Article = ({
       >
         {content}
       </ReactMarkdown>
+      <BlogFooter
+        url={`https://www.cmarghin.com/blog/${slug}`}
+        title={title}
+        quote={description}
+      />
     </>
   );
 };

@@ -3,6 +3,7 @@ import { Poppins, Open_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import Article from "@/app/components/Article";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
+import BlogFooter from "@/app/components/BlogFooter";
 
 const popins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -94,6 +95,9 @@ const Blog = async ({ params }: { params: { blog: string } }) => {
           alt={blog.data[0].attributes.title}
           image={blog.data[0].attributes.cover.data.attributes.url}
           content={blog.data[0].attributes.content}
+          title={blog.data[0].attributes.title}
+          slug={blog.data[0].attributes.slug}
+          description={blog.data[0].attributes.description}
         />
       </article>
       <ScrollToTopButton />
