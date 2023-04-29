@@ -6,7 +6,11 @@ export function getStrapiURL(path: string) {
   return `${strapiBase}${path}`;
 }
 
-export async function fetchAPI({ path, urlParams, options }: fetchAPIProps) {
+export async function fetchAPI<T>({
+  path,
+  urlParams,
+  options,
+}: fetchAPIProps): Promise<T> {
   const mergedOptions = {
     ...options,
     headers: {

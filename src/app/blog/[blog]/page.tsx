@@ -3,7 +3,7 @@ import { Poppins, Open_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import Article from "@/app/components/Article";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
-import BlogFooter from "@/app/components/BlogFooter";
+import type { Metadata } from "next";
 
 const popins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -106,3 +106,56 @@ const Blog = async ({ params }: { params: { blog: string } }) => {
 };
 
 export default Blog;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { blog: string };
+}): Promise<Metadata> {
+  const slug = params.blog;
+
+  const info: fetchAPIProps = {
+    path: "/api/blogs",
+    urlParams: {
+      populate: ["cover", "tags"],
+      filters: {
+        ["slug"]: {
+          ["$eq"]: slug,
+        },
+      },
+    },
+    options: {
+      next: {
+        revalidate: 60,
+      },
+    },
+  };
+
+  let blog = await fetchAPI<{ data: Article[] }>(info);
+
+  return {
+    title: blog.data[0].attributes.title,
+    description: blog.data[0].attributes.description,
+    openGraph: {
+      title: blog.data[0].attributes.title,
+      description: blog.data[0].attributes.description,
+      images: [
+        {
+          url: blog.data[0].attributes.cover.data.attributes.url,
+          width: 800,
+          height: 600,
+          alt: blog.data[0].attributes.title,
+        },
+      ],
+    },
+    twitter: {
+      title: blog.data[0].attributes.title,
+      description: blog.data[0].attributes.description,
+      images: [
+        {
+          url: blog.data[0].attributes.cover.data.attributes.url,
+        },
+      ],
+    },
+  };
+}
