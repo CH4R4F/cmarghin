@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useState } from "react";
+import * as Icon from "react-icons/fa";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -73,6 +74,22 @@ const ContactForm = () => {
     }
     setLoading(false);
   };
+
+  if (success) {
+    return (
+      <div className="max-w-2xl mt-20 px-4 md:px-8 space-y-4">
+        <div className="flex items-center justify-center">
+          <Icon.FaCheckCircle className="text-green-500 text-6xl" />
+        </div>
+        <h2 className="text-2xl font-bold text-center dark:text-gray-100">
+          Thank you for your message!
+        </h2>
+        <p className="text-center dark:text-gray-100">
+          I will get back to you as soon as possible ^_^
+        </p>
+      </div>
+    );
+  }
 
   return (
     <form
