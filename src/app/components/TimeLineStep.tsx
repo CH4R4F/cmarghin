@@ -1,4 +1,5 @@
 import { BsCalendarCheck } from "react-icons/bs";
+import { CgEditBlackPoint } from "react-icons/cg";
 
 type Props = {
   date: string;
@@ -12,7 +13,7 @@ const TimeLineStep = ({ date, title, description }: Props) => {
       <div className="flex flex-col items-center mr-4">
         <div>
           <div className="flex items-center justify-center w-10 h-10 border rounded-full">
-            <BsCalendarCheck className="w-5 h-5 text-gray-600 dark:text-gray-100" />
+            <CgEditBlackPoint className="w-5 h-5 text-gray-600 dark:text-gray-100" />
           </div>
         </div>
         <div className="w-px h-full bg-gray-300" />
