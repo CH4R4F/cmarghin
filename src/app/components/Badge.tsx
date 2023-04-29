@@ -1,13 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Badge = () => {
   const [show, setShow] = useState(true);
 
-  if (!show) {
-    return null;
-  }
+  // hide after 5 seconds
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShow(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (!show) return null;
 
   return (
     <div className="bg-slate-900 dark:bg-stone-50 fixed bottom-0 left-0 w-full">
@@ -30,23 +37,10 @@ const Badge = () => {
             </svg>
           </div>
           <p className="py-2 font-medium">
-            This website is still under development. You may experience some
+            This page is still under development. You may experience some
             unexpected behavior, or uncompleted data;
           </p>
         </div>
-        <button
-          onClick={() => setShow(false)}
-          className="p-2 rounded-lg duration-150 bg-stone-50 dark:bg-slate-900 ring-offset-2 focus:ring"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-6 h-6 text-slate-900 dark:text-stone-50"
-          >
-            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-          </svg>
-        </button>
       </div>
     </div>
   );
