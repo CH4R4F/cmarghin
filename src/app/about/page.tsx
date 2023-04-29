@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import { TbDotsVertical } from "react-icons/tb";
 import TimeLineStep from "../components/TimeLineStep";
+import Badge from "../components/Badge";
 
 const popins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -62,6 +63,7 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Badge />
     </div>
   );
 };

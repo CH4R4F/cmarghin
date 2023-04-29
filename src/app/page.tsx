@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import Badge from "./components/Badge";
 import Footer from "./components/Footer";
 
 const popins = Poppins({
@@ -51,6 +52,7 @@ export default function Home() {
       </p>
 
       <Footer />
+      <Badge />
     </div>
   );
 }
