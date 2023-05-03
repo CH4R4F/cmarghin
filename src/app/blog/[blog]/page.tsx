@@ -1,15 +1,11 @@
 import fetchAPI from "@/lib/api";
-import { Poppins, Open_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import Article from "@/app/components/Article";
 import ScrollToTopButton from "@/app/components/ScrollToTopButton";
 import type { Metadata } from "next";
-
-const popins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+import Wrapper from "@/app/components/Wrapper";
+import Progress from "@/app/components/BlogProgress";
 
 const openSans = Open_Sans({
   weight: ["400", "500", "600", "700", "800"],
@@ -50,9 +46,8 @@ const Blog = async ({ params }: { params: { blog: string } }) => {
   }
 
   return (
-    <div
-      className={`max-w-5xl mx-auto py-32 leading-9 px-6 ${popins.className}`}
-    >
+    <Wrapper>
+      <Progress />
       <article className="blog">
         {/* date */}
         <span className={`date ${openSans.className}`}>
@@ -83,7 +78,7 @@ const Blog = async ({ params }: { params: { blog: string } }) => {
                 className={`tag ${
                   openSans.className
                 } px-3 rounded-md select-none
-                ${tagColor[lowerCase] || "bg-gray-400"}
+                ${tagColor[lowerCase] || "bg-slate-400"}
                 `}
               >
                 #{lowerCase}
@@ -101,7 +96,7 @@ const Blog = async ({ params }: { params: { blog: string } }) => {
         />
       </article>
       <ScrollToTopButton />
-    </div>
+    </Wrapper>
   );
 };
 

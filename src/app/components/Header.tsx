@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 import { CldImage } from "next-cloudinary";
 import { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -40,9 +41,15 @@ const Header = () => {
                   className={` ${activePathName(
                     pathname,
                     ""
-                  )} text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                  )} relative text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                   href="/"
                 >
+                  {pathname.split("/")[1] == "" && (
+                    <motion.span
+                      layoutId="underline"
+                      className="absolute underline left-0 top-full h-[2px] w-full bg-slate-900 dark:bg-slate-100 rounded-full"
+                    />
+                  )}
                   Home
                 </Link>
               </li>
@@ -51,15 +58,21 @@ const Header = () => {
                   className={` ${activePathName(
                     pathname,
                     "about"
-                  )} text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                  )} relative text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                   href="/about"
                 >
+                  {pathname.split("/")[1] == "about" && (
+                    <motion.span
+                      layoutId="underline"
+                      className="absolute underline left-0 top-full h-[2px] w-full bg-slate-900 dark:bg-slate-100 rounded-full"
+                    />
+                  )}
                   About
                 </Link>
               </li>
               {/* <li className={`${activePathName(pathname, "projects")} py-3`}>
                 <Link
-                  className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                  className={` text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                   href="/projects"
                 >
                   Projects
@@ -70,9 +83,15 @@ const Header = () => {
                   className={`${activePathName(
                     pathname,
                     "blog"
-                  )} text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                  )} relative text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                   href="/blog"
                 >
+                  {pathname.split("/")[1] == "blog" && (
+                    <motion.span
+                      layoutId="underline"
+                      className="absolute underline left-0 top-full h-[2px] w-full bg-slate-900 dark:bg-slate-100 rounded-full"
+                    />
+                  )}
                   Blog
                 </Link>
               </li>
@@ -81,9 +100,15 @@ const Header = () => {
                   className={`${activePathName(
                     pathname,
                     "contact"
-                  )}  text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                  )}  relative text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                   href="/contact"
                 >
+                  {pathname.split("/")[1] == "contact" && (
+                    <motion.span
+                      layoutId="underline"
+                      className="absolute underline left-0 top-full h-[2px] w-full bg-slate-900 dark:bg-slate-100 rounded-full"
+                    />
+                  )}
                   Contact
                 </Link>
               </li>
@@ -105,7 +130,7 @@ const Header = () => {
 
         {/* mobile navigation */}
         <nav
-          className={`absolute top-0 left-0 w-full h-screen bg-gray-100 dark:bg-black transition-opacity duration-500 ${
+          className={`absolute top-0 left-0 w-full h-screen bg-slate-100 dark:bg-black transition-opacity duration-500 ${
             open
               ? "opacity-100 pointer-events-auto z-40"
               : "opacity-0 pointer-events-none -z-40"
@@ -128,7 +153,7 @@ const Header = () => {
                   <Link
                     aria-label="Home page link"
                     onClick={() => setOpen(!open)}
-                    className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                    className={` text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                     href="/"
                   >
                     Home
@@ -138,7 +163,7 @@ const Header = () => {
                   <Link
                     aria-label="About page link"
                     onClick={() => setOpen(!open)}
-                    className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                    className={` text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                     href="/about"
                   >
                     About
@@ -147,7 +172,7 @@ const Header = () => {
                 {/* <li className={`${activePathName(pathname, "projects")} py-3`}>
                   <Link
                     onClick={() => setOpen(!open)}
-                    className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                    className={` text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                     href="/projects"
                   >
                     Projects
@@ -157,7 +182,7 @@ const Header = () => {
                   <Link
                     aria-label="Blog page link"
                     onClick={() => setOpen(!open)}
-                    className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                    className={` text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                     href="/blog"
                   >
                     Blog
@@ -167,7 +192,7 @@ const Header = () => {
                   <Link
                     aria-label="Contact page link"
                     onClick={() => setOpen(!open)}
-                    className={` text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100`}
+                    className={` text-slate-500 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100`}
                     href="/contact"
                   >
                     Contact

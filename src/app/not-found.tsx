@@ -5,10 +5,10 @@ const NotFound = () => {
     <main className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start md:px-8">
         <div className="mx-auto space-y-3 text-center">
-          <h3 className="text-gray-800 dark:text-white text-4xl font-semibold sm:text-5xl">
+          <h3 className="text-slate-800 dark:text-white text-4xl font-semibold sm:text-5xl">
             Page not found
           </h3>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-slate-600 dark:text-slate-300">
             Sorry, the page you are looking for could not be found or has been
             removed.
           </p>

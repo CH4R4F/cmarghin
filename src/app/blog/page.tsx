@@ -1,12 +1,6 @@
 import fetchAPI from "@/lib/api";
-import { Poppins } from "next/font/google";
 import BlogCard from "../components/BlogCard";
-
-const popins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+import Wrapper from "../components/Wrapper";
 
 const page = async () => {
   const info: fetchAPIProps = {
@@ -30,15 +24,13 @@ const page = async () => {
   }
 
   return (
-    <div
-      className={`max-w-5xl mx-auto py-32 leading-9 px-6 ${popins.className}`}
-    >
-      <h1 className="text-gray-900 dark:text-gray-100 leading-tight text-5xl md:text-6xl">
+    <Wrapper>
+      <h1 className="text-slate-900 dark:text-slate-100 leading-tight text-5xl md:text-6xl">
         Blogs
       </h1>
-      <p className="text-justify md:text-start text-gray-500 dark:text-gray-300 mt-8 text-[16px]">
+      <p className="text-justify md:text-start text-slate-500 dark:text-slate-300 mt-8 text-[16px]">
         Here are some of my articles, I write about web development, open
-        source, things I learned and more.
+        source, and topics I&apos;m learning.
       </p>
 
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -56,12 +48,12 @@ const page = async () => {
       </div>
       {!blogs.data.length && (
         <div className="text-center">
-          <h1 className="text-gray-900 text-center opacity-25 font-extrabold  dark:text-gray-100 leading-tight text-5xl md:text-6xl">
+          <h1 className="text-slate-900 text-center opacity-25 font-extrabold  dark:text-slate-100 leading-tight text-5xl md:text-6xl">
             No blogs found
           </h1>
         </div>
       )}
-    </div>
+    </Wrapper>
   );
 };
 

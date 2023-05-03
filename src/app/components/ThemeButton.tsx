@@ -18,7 +18,7 @@ const ThemeButton = () => {
     <div>
       {currentTheme === "dark" ? (
         <SunIcon
-          className="h-7 w-7 cursor-pointer text-gray-100"
+          className="h-7 w-7 cursor-pointer text-slate-100"
           onClick={() => setTheme("light")}
         />
       ) : (

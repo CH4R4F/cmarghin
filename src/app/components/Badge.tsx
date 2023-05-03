@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Badge = () => {
   const [show, setShow] = useState(true);
@@ -17,7 +18,12 @@ const Badge = () => {
   if (!show) return null;
 
   return (
-    <div className="bg-slate-900 dark:bg-stone-50 fixed bottom-0 left-0 w-full">
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 1 }}
+      className="bg-slate-900 dark:bg-stone-50 fixed bottom-0 left-0 w-full"
+    >
       <div className="px-4 py-3 flex items-center justify-between text-white dark:text-slate-800 md:px-8">
         <div className="flex gap-x-4 items-center">
           <div className="w-10 h-10 flex-none rounded-lg bg-stone-200 dark:bg-slate-800 flex items-center justify-center">
@@ -42,7 +48,7 @@ const Badge = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -58,23 +58,43 @@ const Article = ({
         remarkPlugins={[remarkGfm]}
         components={{
           h1: ({ children }) => (
-            <h1 className="text-gray-900 mt-10 dark:text-white">{children}</h1>
+            <h1 className="text-slate-900 mt-10 dark:text-white">{children}</h1>
           ),
           h2: ({ children }) => (
-            <h2 className="text-gray-900 mt-10 dark:text-white">{children}</h2>
+            <h2 className="text-slate-900 mt-10 dark:text-white">{children}</h2>
           ),
           h3: ({ children }) => (
-            <h3 className="text-gray-900 mt-10 dark:text-white">{children}</h3>
+            <h3 className="text-slate-900 mt-10 dark:text-white">{children}</h3>
           ),
           p: ({ children }) => (
-            <p className="text-xl leading-relaxed font-medium text-gray-500 dark:text-gray-400">
+            <p className="text-xl leading-relaxed font-medium text-slate-500 dark:text-slate-400">
               {children}
             </p>
           ),
+          ul: ({ children }) => (
+            <ul className="list-disc pl-10 text-xl leading-relaxed font-medium text-slate-500 dark:text-slate-400 dark:marker:text-white my-3 marker:text-black">
+              {children}
+            </ul>
+          ),
           strong: ({ children }) => (
-            <strong className="font-bold text-gray-900 dark:text-white">
+            <strong className="font-bold text-slate-900 dark:text-white/80">
               {children}
             </strong>
+          ),
+          blockquote: ({ children }) => (
+            <blockquote className="my-3 bg-slate-300 dark:bg-slate-800 py-3 pl-6 pr-4 border-l-4 border-slate-700 dark:border-slate-400 !text-slate-800 rounded-tr-lg rounded-br-lg">
+              {children}
+            </blockquote>
+          ),
+          img: ({ src, alt }) => (
+            <CldImage
+              className="w-full object-cover rounded-md mt-10"
+              src={src as string}
+              alt={alt as string}
+              width={1920}
+              height={1080}
+              sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 1920px"
+            />
           ),
           a: ({ children, href }) => {
             if (href?.startsWith("http")) {

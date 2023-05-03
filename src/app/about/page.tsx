@@ -1,20 +1,11 @@
-import { Poppins } from "next/font/google";
-import { MdOutlineRocketLaunch } from "react-icons/md";
 import TimeLineStep from "../components/TimeLineStep";
 import Badge from "../components/Badge";
-
-const popins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+import Wrapper from "../components/Wrapper";
 
 const page = () => {
   return (
-    <div
-      className={`max-w-5xl mx-auto py-32 leading-9 px-6 ${popins.className}`}
-    >
-      <h1 className="text-gray-900 dark:text-gray-100 leading-tight text-5xl md:text-6xl">
+    <Wrapper>
+      <h1 className="text-slate-900 dark:text-slate-100 leading-tight text-5xl md:text-6xl">
         About Me
       </h1>
       <div className="2/3 mt-14">
@@ -53,19 +44,19 @@ const page = () => {
           <div className="flex flex-col items-center mr-4">
             <div>
               <div className="flex items-center justify-center w-10 h-10 border rounded-full">
-                <MdOutlineRocketLaunch className="w-5 h-5 text-gray-600 dark:text-gray-100" />
+                <MdOutlineRocketLaunch className="w-5 h-5 text-slate-600 dark:text-slate-100" />
               </div>
             </div>
           </div>
           <div className="pt-1">
-            <p className="mb-2 text-lg font-bold text-gray-600 dark:text-gray-200">
+            <p className="mb-2 text-lg font-bold text-slate-600 dark:text-slate-200">
               Continuously learning and growing
             </p>
           </div>
         </div> */}
       </div>
       <Badge />
-    </div>
+    </Wrapper>
   );
 };
 

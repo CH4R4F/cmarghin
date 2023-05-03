@@ -1,11 +1,5 @@
-import { Poppins } from "next/font/google";
 import ContactForm from "../components/ContactForm";
-
-const popins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+import Wrapper from "../components/Wrapper";
 
 const Contact = () => {
   const contactMethods = [
@@ -52,28 +46,26 @@ const Contact = () => {
   ];
 
   return (
-    <div
-      className={`max-w-5xl mx-auto py-32 leading-9 px-6 ${popins.className}`}
-    >
-      <div className="max-w-screen-xl mx-auto px-4 text-gray-600 dark:text-gray-300 md:px-8">
+    <Wrapper>
+      <div className="max-w-screen-xl mx-auto px-4 text-slate-600 dark:text-slate-300 md:px-8">
         <div className="max-w-xl space-y-3">
-          <h1 className="text-gray-800 dark:text-gray-100 font-semibold text-5xl md:text-6xl">
+          <h1 className="text-slate-800 dark:text-slate-100 font-semibold text-5xl md:text-6xl">
             Let&apos;s get in touch
           </h1>
           <p>
-            We’re here to help and answer any question you might have, We look
-            forward to hearing from you .
+            I&apos;m here to help and answer any question you might have,
+            I&apos;m looking forward to hearing from you.
           </p>
         </div>
         <div>
           <ul className="mt-12 flex flex-wrap gap-x-12 gap-y-6 items-center lg:gap-x-24">
             {contactMethods.map((item, idx) => (
               <li key={idx}>
-                <h4 className="text-gray-800 dark:text-gray-100 text-lg font-medium">
+                <h4 className="text-slate-800 dark:text-slate-100 text-lg font-medium">
                   {item.title}
                 </h4>
                 <div className="mt-3 flex items-center gap-x-3">
-                  <div className="flex-none text-gray-400">{item.icon}</div>
+                  <div className="flex-none text-slate-400">{item.icon}</div>
                   <p>{item.contact}</p>
                 </div>
               </li>
@@ -83,7 +75,7 @@ const Contact = () => {
       </div>
 
       <ContactForm />
-    </div>
+    </Wrapper>
   );
 };
 

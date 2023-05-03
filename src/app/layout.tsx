@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="max-w-7xl mx-auto transition-all duration-500">
+      <body className="max-w-7xl mx-auto transition-all duration-500 bg-stone-50 dark:bg-slate-950">
         <Theme>
           <main className={inter.className}>
             <Header />

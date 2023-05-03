@@ -16,7 +16,9 @@ type BlogFooterProps = {
 const BlogFooter = ({ url, title, quote }: BlogFooterProps) => {
   return (
     <footer className="flex items-center space-x-4 mt-16">
-      <span className="text-slate-900 dark:text-gray-100 text-3xl">Share:</span>
+      <span className="text-slate-900 dark:text-slate-100 text-3xl">
+        Share:
+      </span>
 
       <div className="flex items-center">
         <FacebookShareButton url={url} quote={quote}>

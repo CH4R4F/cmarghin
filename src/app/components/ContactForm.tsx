@@ -81,10 +81,10 @@ const ContactForm = () => {
         <div className="flex items-center justify-center">
           <Icon.FaCheckCircle className="text-green-500 text-6xl" />
         </div>
-        <h2 className="text-2xl font-bold text-center dark:text-gray-100">
+        <h2 className="text-2xl font-bold text-center dark:text-slate-100">
           Thank you for your message!
         </h2>
-        <p className="text-center dark:text-gray-100">
+        <p className="text-center dark:text-slate-100">
           I will get back to you as soon as possible ^_^
         </p>
       </div>
@@ -99,7 +99,7 @@ const ContactForm = () => {
       <div>
         <label
           htmlFor="UserName"
-          className="dark:text-gray-100 block font-medium text-gray-700"
+          className="dark:text-slate-100 block font-medium text-slate-700"
         >
           Name
         </label>
@@ -111,13 +111,13 @@ const ContactForm = () => {
           type="text"
           id="UserName"
           placeholder="John Doe"
-          className="p-4 mt-1 w-full rounded-md border-2 border-gray-400 dark:border-gray-400/10 focus:border-gray-800 dark:focus:border-gray-400/30 focus:outline-none focus:ring-0 shadow-sm sm:text-sm dark:bg-gray-400/10 dark:text-white"
+          className="p-4 mt-1 w-full rounded-md border-2 border-slate-400 dark:border-slate-400/10 focus:border-slate-800 dark:focus:border-slate-400/30 focus:outline-none focus:ring-0 shadow-sm sm:text-sm dark:bg-slate-400/10 dark:text-white"
         />
       </div>
       <div>
         <label
           htmlFor="UserEmail"
-          className="dark:text-gray-100 block font-medium text-gray-700"
+          className="dark:text-slate-100 block font-medium text-slate-700"
         >
           Email
         </label>
@@ -129,13 +129,13 @@ const ContactForm = () => {
           type="email"
           id="UserEmail"
           placeholder="john@rhcp.com"
-          className="p-4 mt-1 w-full rounded-md border-2 border-gray-400 dark:border-gray-400/10 focus:border-gray-800 dark:focus:border-gray-400/30 focus:outline-none focus:ring-0 shadow-sm sm:text-sm dark:bg-gray-400/10 dark:text-white"
+          className="p-4 mt-1 w-full rounded-md border-2 border-slate-400 dark:border-slate-400/10 focus:border-slate-800 dark:focus:border-slate-400/30 focus:outline-none focus:ring-0 shadow-sm sm:text-sm dark:bg-slate-400/10 dark:text-white"
         />
       </div>
       <div>
         <label
           htmlFor="UserMessage"
-          className="dark:text-gray-100 block font-medium text-gray-700"
+          className="dark:text-slate-100 block font-medium text-slate-700"
         >
           Message
         </label>
@@ -147,12 +147,12 @@ const ContactForm = () => {
           id="UserMessage"
           rows={7}
           placeholder="Hello, I'm John Doe"
-          className="p-4 mt-1 w-full rounded-md border-2 border-gray-400 dark:border-gray-400/10 focus:border-gray-800 dark:focus:border-gray-400/30 focus:outline-none focus:ring-0 shadow-sm sm:text-sm dark:bg-gray-400/10 dark:text-white resize-none"
+          className="p-4 mt-1 w-full rounded-md border-2 border-slate-400 dark:border-slate-400/10 focus:border-slate-800 dark:focus:border-slate-400/30 focus:outline-none focus:ring-0 shadow-sm sm:text-sm dark:bg-slate-400/10 dark:text-white resize-none"
         />
       </div>
 
       <div className="flex items-center space-x-5">
-        <button className="relative px-10 py-5 text-sm text-white bg-gray-800 rounded-md shadow-md hover:bg-gray-700 focus:outline-none transition-all duration-200">
+        <button className="relative px-10 py-5 text-sm text-white bg-slate-800 rounded-md shadow-md hover:bg-slate-700 focus:outline-none transition-all duration-200">
           {loading ? <div className="loader text-white"></div> : "Send"}
         </button>
 
