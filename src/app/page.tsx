@@ -24,7 +24,7 @@ export default function Home() {
         You can see my{" "}
         <a
           className="text-link"
-          href="https://www.github.com"
+          href="https://www.github.com/ch4r4f"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="See my projects on github"

@@ -36,7 +36,7 @@ const page = () => {
           description="During my internship, I picked up freelancing and built websites for small businesses. Eventually, I landed a freelance gig with Scandiweb, an e-commerce solutions company based in Latvia. As a junior developer, I gained valuable technical and soft skills that I still use today. I'm grateful for the experience and all that I learned."
         />
         <TimeLineStep
-          date="April 2021"
+          date="April 2023"
           title="Internship at Cegedim"
           description="I finished my study at Youcode, right now I'm a full stack developer intern at 'Cegedim' and I'm looking forward to grow and learn more and more."
         />
